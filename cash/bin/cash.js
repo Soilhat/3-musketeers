@@ -8,7 +8,11 @@ const currencies = require('../lib/currencies.json');
 
 const {API} = require('./constants');
 
+/** Convert currencies
+* @params {amount, from, to} command - the amount and conversion to do
+*/
 const cash = async command => {
+	/*Retrieving the data entered by the user or the default ones*/
 	const {amount} = command;
 	const from = command.from.toUpperCase();
 	const to = command.to.filter(item => item !== from).map(item => item.toUpperCase());
@@ -25,6 +29,7 @@ const cash = async command => {
 
 	loading.start();
 
+	/*Conversion in the new currency*/
 	await got(API, {
 		json: true
 	}).then(response => {
@@ -49,5 +54,8 @@ const cash = async command => {
 		process.exit(1);
 	});
 };
-
+/**
+* Currency converison
+* @exports cash
+*/
 module.exports = cash;

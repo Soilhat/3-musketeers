@@ -33,7 +33,7 @@ The default conversion is 1USD to EUR (Euro), GBP (British Pound Sterling) and J
 > node bin/index.js
 ```
 
-To convert any amount in an another currency run :
+To convert any amount in another currency run :
 
 ```sh
 > node bin/index.js <amount> <from> <to>
