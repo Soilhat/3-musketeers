@@ -7,15 +7,27 @@ describe('starwars-names', () => {
       expect(starWars.all).toHaveLength(starWarsNames.length)
     });
     test('should be an array of strings', () => {
-      throw new Error('test not yet defined... remove the throw and write your test here');
+      var strings = true;
+      starWars.all.forEach( function(name){
+        strings = (typeof name == "string");
+      });
+      expect(strings);
     });
 
     test('should contain `Luke Skywalker`', () => {
-      throw new Error('test not yet defined... remove the throw and write your test here');
+      var strings = true;
+      starWars.all.forEach( function(name){
+        strings = name.includes('Luke Skywalker');
+      });
+      expect(strings);
     });
 
     test('should not contain `Ben Quadinaros`', () => {
-      throw new Error('test not yet defined... remove the throw and write your test here');
+      var strings = true;
+      starWars.all.forEach( function(name){
+        strings = !name.includes('Ben Quadinaros');
+      });
+      expect(strings);
     });
   });
 
